@@ -11,6 +11,9 @@ var packages = require('./packages.js');
 var allPackages = packages.allPackages();
 
 project.createAtDir = function (projectDir) {
+  // Make path absolute.
+  projectDir = path.join(process.cwd(), projectDir);
+
   examples.create({
     dir: projectDir
   });
@@ -30,15 +33,17 @@ project.createAtDir = function (projectDir) {
         packageJson.dependencies[name] = allPackages[name];
       }
     });
+    packageJson.dependencies['abc-package'] = allPackages['abc-package'];
   }
   jf.writeFileSync(packagePath, packageJson);
 
-  npm.load(function (err, npm) {
-    // use the npm object, now that it's loaded.
+  npm.load({ prefix: projectDir }, function (err, npm) {
+    // Use the npm object, now that it's loaded.
     if (err) {
       console.log('Error loading npm: ', err);
     }
-    npm.commands.install([projectDir], function (err) {
+
+    npm.commands.install(function (err) {
       if (err) {
         console.log('Error installing npm project: ', err);
       }

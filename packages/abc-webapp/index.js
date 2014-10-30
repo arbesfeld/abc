@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var abc = require('abc');
+var abcPackage = require('abc-package');
 
-abc.onRun(function () {
-  grunt.loadNpmTasks('grunt-express');
+abcPackage.onRun(function () {
+  console.log("HELLLLLO");
 });
