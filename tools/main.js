@@ -1,23 +1,15 @@
 #!/usr/bin/env node
 
-var cli = require('cli');
+var program = require('commander');
 var project = require('./project');
 
-cli.parse({
-  run:   [false, 'Run your app'],
-  create: [false, 'Create an app']
-});
+program
+  .version('0.0.1')
+  .command('create <dir>')
+  .action(function (dir) {
+    project.createAtDir(dir);
+  });
 
-cli.main(function (args, opts) {
-  if (opts.run) {
-    console.log('Running!');
-  }
-
-  else if (opts.create) {
-    console.log('Creating');
-    project.createAtDir(args[0]);
-  }
-});
-
+program.parse(process.argv);
 var abc = exports;
 
