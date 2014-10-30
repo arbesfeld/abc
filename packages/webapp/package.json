@@ -1,0 +1,13 @@
+{
+  "name": "webapp",
+  "version": "0.0.0",
+  "description": "Run a basic server",
+  "main": "index.js",
+  "author": "Matthew Arbesfeld <arbesfeld@gmail.com> (http://www.arbesfeld.com/)",
+  "license": "MIT License",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-express": "^1.4.1"
+  },
+  "repository": "XXX"
+}

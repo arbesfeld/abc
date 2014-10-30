@@ -1,0 +1,12 @@
+{
+  "name": "examples",
+  "version": "0.0.0",
+  "description": "Boilerplate examples for abc platform.",
+  "main": "index.js",
+  "author": "Matthew Arbesfeld <arbesfeld@gmail.com> (http://www.arbesfeld.com/)",
+  "license": "MIT License",
+  "devDependencies": {
+    "wrench": "^1.5.8"
+  },
+  "repository": "XXX"
+}
