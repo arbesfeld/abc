@@ -1,0 +1,11 @@
+{
+  "name": "abc-platform",
+  "version": "0.0.1",
+  "description": "A set of recommended node modules for using ABC.",
+  "main": "index.js",
+  "author": "Matthew Arbesfeld <arbesfeld@gmail.com> (http://www.arbesfeld.com/)",
+  "license": "MIT License",
+  "dependencies": {
+    "abc-webapp": "file:../abc-webapp"
+  }
+}

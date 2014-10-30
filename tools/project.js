@@ -1,19 +1,47 @@
 var project = exports;
 
-var file = require('file');
+var fs = require('fs');
 var path = require('path');
-var examples = require('examples');
+var examples = require('abc-examples');
 var jf = require('jsonfile');
+var npm = require('npm');
+var _ = require('lodash');
+var packages = require('./packages.js');
 
-project.createAtDir = function (dir) {
+var allPackages = packages.allPackages();
+
+project.createAtDir = function (projectDir) {
   examples.create({
-    dir: dir
+    dir: projectDir
   });
 
-  var packagePath = path.join(dir, 'package.json');
-  var projectName = path.basename(dir);
+  var packagePath = path.join(projectDir, 'package.json');
+  var projectName = path.basename(projectDir);
 
   var packageJson = jf.readFileSync(packagePath);
   packageJson.name = projectName;
+
+  var inCheckout = true; // XXX todo: fix this if not running from a checkout
+  if (inCheckout) {
+    // If we are in checkout, use the local version of the packages instead.
+    // XXX need a way to make sure that distributions have the correct published versions.
+    _.map(packageJson.dependencies, function (version, name) {
+      if (allPackages[name]) {
+        packageJson.dependencies[name] = allPackages[name];
+      }
+    });
+  }
   jf.writeFileSync(packagePath, packageJson);
+
+  npm.load(function (err, npm) {
+    // use the npm object, now that it's loaded.
+    if (err) {
+      console.log('Error loading npm: ', err);
+    }
+    npm.commands.install([projectDir], function (err) {
+      if (err) {
+        console.log('Error installing npm project: ', err);
+      }
+    });
+  });
 };

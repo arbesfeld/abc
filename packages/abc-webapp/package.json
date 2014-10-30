@@ -1,6 +1,6 @@
 {
-  "name": "webapp",
-  "version": "0.0.0",
+  "name": "abc-webapp",
+  "version": "0.0.1",
   "description": "Run a basic server",
   "main": "index.js",
   "author": "Matthew Arbesfeld <arbesfeld@gmail.com> (http://www.arbesfeld.com/)",

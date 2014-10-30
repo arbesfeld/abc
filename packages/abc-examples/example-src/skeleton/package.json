@@ -1,0 +1,10 @@
+{
+  "name": "skeleton",
+  "version": "0.0.0",
+  "description": "Write a description of your app.",
+  "main": "index.js",
+  "dependencies": {
+    "abc-platform": "0.0.1"
+  },
+  "repository": "Git repository for your app."
+}

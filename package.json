@@ -11,7 +11,7 @@
   },
   "scripts": {
     "preinstall": "./install.js",
-    "test": "test/main.js"
+    "test": "test/selftest.js"
   },
   "repository": {
     "type": "git",
@@ -35,11 +35,12 @@
   "engineStrict": true,
   "preferGlobal": true,
   "dependencies": {
-    "cli": "^0.6.5",
     "commander": "^2.5.0",
+    "abc-examples": "file:packages/abc-examples",
     "file": "^0.2.2",
     "jsonfile": "^2.0.0",
     "lodash": "^2.4.1",
-    "examples": "file:packages/examples"
+    "npm": "^2.1.5",
+    "rimraf": "^2.2.8"
   }
 }

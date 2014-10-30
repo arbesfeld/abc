@@ -1,6 +1,6 @@
 {
-  "name": "examples",
-  "version": "0.0.0",
+  "name": "abc-examples",
+  "version": "0.0.1",
   "description": "Boilerplate examples for abc platform.",
   "main": "index.js",
   "author": "Matthew Arbesfeld <arbesfeld@gmail.com> (http://www.arbesfeld.com/)",

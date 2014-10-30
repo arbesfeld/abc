@@ -11,6 +11,8 @@ var examples = exports;
 
   @exampleName {string} name of the example
   @dir {path} path to where the example should be copied
+
+  returns the path to the project
 */
 examples.create = function (opts) {
   var dir = opts.dir;
