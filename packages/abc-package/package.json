@@ -2,7 +2,7 @@
   "name": "abc-package",
   "version": "0.0.1",
   "description": "Module for creating abc compatible packages.",
-  "main": "index.js",
+  "main": "abc-package.js",
   "repository": {
     "type": "git",
     "url": "XXX"
